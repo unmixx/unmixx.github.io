@@ -5,7 +5,7 @@
   <meta name="description" content="Project page for an anonymous submission.">
   <meta name="keywords" content="audio, separation, anonymous submission">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Untangling Highly Correlated Vocals in Multiple Singing Voices Separation</title>
+  <title>UNMIXX: UNTANGLING HIGHLY CORRELATED SINGING VOICES MIXTURES</title>
 
   
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
@@ -114,7 +114,19 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Multiple singing voice separation (MSVS) is closely related to speech separation, yet presents greater challenges due to the highly correlated nature of singing voices and the scarcity of multiple singing datasets. Existing studies on MSVS can be broadly classified into two categories: choral music separation and popular music separation. The latter remains underexplored and continues to exhibit limited performance. In this work, we address these limitations by introducing: (1) a data mining strategy for constructing highly correlated training mixtures, (2) a reverse attention mechanism to suppress highly correlated regions between outputs, and (3) a magnitude penalty loss that penalizes spectrogram regions containing energy that should exclusively belong to the other output. Experimental results demonstrate that our approach achieves substantial performance gains over prior methods.  
+            In this paper, we introduce UNMIXX, a novel framework for
+            the multiple singing voices separation (MSVS). While simi-
+            lar to speech separation, MSVS presents unique challenges,
+            namely data scarcity and highly correlated nature of singing
+            voice. To address these issues, we propose three key com-
+            ponents: (1) a data-mining strategy to construct highly corre-
+            lated training mixtures, (2) a reverse attention that drives the
+            two outputs apart, down-weighting regions where their rep-
+            resentations are highly similar and (3) a magnitude penalty
+            loss penalizing energy erroneously assigned to the other out-
+            put. Experiments show that UNMIXX achieves substantial
+            improvements, with more than 2.2 dB SDRi gains on Med-
+            leyVox evaluation set over prior method.
           </p>
         </div>
       </div>
