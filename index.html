@@ -1,870 +1,771 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="Project page for an anonymous submission.">
-  <meta name="keywords" content="audio, separation, anonymous submission">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UNMIXX: UNTANGLING HIGHLY CORRELATED SINGING VOICES MIXTURES</title>
+  <meta charset="utf-8" />
+  <meta name="description" content="UNMIXX project page: Untangling Highly Correlated Vocals in Multiple Singing Voice Separation." />
+  <meta name="keywords" content="audio, separation, UNMIXX, multiple singing voices" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UNMIXX: Untangling Highly Correlated Vocals in Multiple Singing Voice Separation</title>
 
-  
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+  <link rel="stylesheet" href="./static/css/bulma.min.css" />
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="./static/css/index.css" />
+  <link rel="icon" href="./static/images/favicon.svg" />
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
-
+  <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <style>
+    :root {
+      --gap: 16px;
+      --radius: 14px;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    body { font-family: "Noto Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+
+    /* Layout helpers */
+    .demo-wrap { max-width: 1100px; margin: 0 auto; padding: 16px; }
+    .section-title { font-weight: 800; text-align: left; margin: 4px 0 12px; }
+
+    .mixture { display: flex; justify-content: center; margin: 8px 0 24px; }
+
+    .cols { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .cols-4 { display: grid; gap: var(--gap); grid-template-columns: repeat(4, 1fr); }
+
+    @media (max-width: 1024px) { .cols-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .cols-4 { grid-template-columns: 1fr; } }
+
+    .col { display: flex; flex-direction: column; gap: 12px; }
+    .col h4 { font-weight: 700; text-align: center; margin: 0 0 4px; }
+
+    .card { border: 1px solid #eee; border-radius: var(--radius); padding: 12px; box-shadow: var(--shadow); background: #fff; }
+    .card audio { width: 100%; display: block; margin-bottom: 10px; }
+    .card img { width: 100%; height: auto; border-radius: 8px; display: block; }
+
+    .sample-section { border: 3px solid; border-radius: 12px; padding: 20px; margin-bottom: 40px; border-image: linear-gradient(45deg, #ffcad5, #93daff) 1; }
+    .sample-section h2 { margin-top: 0; }
+
+    /* Navbar */
+    .navbar { box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06); }
+
+    /* Minor spacing fixes */
+    .title.publication-title { word-break: keep-all; }
+    .publication-authors .author-block { display: block; }
+  </style>
 </head>
 <body>
-<style>
-  .demo-wrap{max-width:1100px;margin:0 auto;padding:16px}
-  .section-title{font-weight:800;text-align:left;margin:4px 0 12px}
-  .mixture{display:flex;justify-content:center;margin:8px 0 24px}
-  .cols {
-    display: grid;
-    gap: 16px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-  .cols_4 {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(4, 1fr); /* 4개씩 */
-}
-
-  .col{display:flex;flex-direction:column;gap:12px}
-  .col h3{font-weight:800;text-align:center;margin:0 0 4px}
-  .card{border:1px solid #eee;border-radius:14px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-  .card audio{width:100%;display:block;margin-bottom:10px}
-  .card img{width:100%;height:auto;border-radius:8px;display:block}
-  @media (max-width: 920px){ .cols{grid-template-columns:1fr 1fr} }
-  @media (max-width: 640px){ .cols{grid-template-columns:1fr} }
-  .sample-section {
-    border: 3px solid;       /* 테두리 */
-    border-radius: 12px;          /* 모서리 둥글게 */
-    padding: 20px;                /* 안쪽 여백 */
-    margin-bottom: 40px;          /* 섹션 간 간격 */
-    border-image: linear-gradient(45deg, #FFCAD5, #93DAFF) 1;
-     /* 살짝 배경색 */
-  }
-  .sample-section h2 {
-    margin-top: 0; }            /* 위쪽 여백 제거 */
-    
-</style>
-
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
-
     </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="#top" aria-label="Home">
+          <span class="icon"><i class="fas fa-home"></i></span>
+        </a>
+      </div>
+    </div>
+  </nav>
 
-  </div>
-</nav>
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              UNMIXX: Untangling Highly Correlated Vocals in Multiple Singing Voice Separation
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Jihoo Jung, Ji-Hoon Kim, Doyeop Kwak, Junwon Lee, Juhan Nam, Joon Son Chung</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Korea Advanced Institute of Science and Technology, South Korea</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ABSTRACT -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              In this paper, we introduce UNMIXX, a novel framework for multiple singing voice separation (MSVS). While related to speech separation, MSVS presents unique challenges—namely data scarcity and the highly correlated nature of singing voices. To address these issues, we propose three key components: (1) a musically informed mixing strategy to construct highly correlated training mixtures, (2) a reverse attention mechanism that drives the two outputs apart via cross-attention, and (3) a magnitude-penalty loss that penalizes energy erroneously assigned to the other output. Experiments show that UNMIXX achieves substantial improvements, with more than ~2.2 dB SDRi gains on the MedleyVox evaluation set over prior methods. Audio samples are available below.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="hero">
-  <div class="hero-body">
+  <!-- AUDIO SAMPLES: DUET -->
+  <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">UNMIXX: Untangling Highly Correlated Vocals in Multiple Singing Voices Separation
-</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Jihoo Jung, Ji-Hoon Kim, Doyeop Kwak, Junwon Lee, Juhan Nam, Joon Son Chung</span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Korea Advanced Institute of Science and Technology, South Korea</span>
-          </div>
+        <div class="column is-full-width">
+          <h1 class="title is-2">Audio Samples</h1>
 
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            In this paper, we introduce UNMIXX, a novel framework for the multiple singing voices separation (MSVS). While similar to speech separation, MSVS presents unique challenges, namely data scarcity and highly correlated nature of singing voice. To address these issues, we propose  three key components: (1) a musically informed mixing strategy to construct highly correlated training mixtures, (2) a reverse attention that drives the two outputs apart using cross attention and (3) a magnitude penalty loss penalizing energy erroneously assigned to the other output. Experiments show that UNMIXX achieves substantial improvements, with more than ~2.2 dB SDRi gains on MedleyVox evaluation set over prior method. Audio samples are available on our demo page.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h1 class="title is-2">Audio Samples</h1>
-          <h2 class="title is-3">Medleyvox Duet Samples</h2>
+          <h2 class="title is-3">MedleyVox Duet Samples</h2>
           <div class="sample-section">
             <div class="content has-text-centered">
               <div class="demo-wrap">
-                <!-- sample1 시작 -->
-                <h3 class="section-title"> 🎵 MedleyVox Duet Sample1</h3>
+
+                <!-- Duet Sample 1 -->
+                <h3 class="section-title">🎵 MedleyVox Duet — Sample 1</h3>
                 <h4>Mixture</h4>
                 <div class="mixture">
-                  <audio controls>
-                    <source src="static/audio/duet/1/LizNelson_Rainfall_-_seg_1.wav" type="audio/wav">
+                  <audio controls aria-label="Duet Sample 1 Mixture">
+                    <source src="static/audio/duet/1/LizNelson_Rainfall_-_seg_1.wav" type="audio/wav" />
                   </audio>
                 </div>
-                <div class="cols_4">
+
+                <div class="cols-4">
                   <!-- Ground Truth -->
                   <div class="col">
                     <h4>Ground Truth</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/1/LizNelson_Rainfall_RAW_01_01_-_seg_1.wav" type="audio/wav">
+                      <audio controls aria-label="GT Source A">
+                        <source src="static/audio/duet/1/LizNelson_Rainfall_RAW_03_01_-_seg_1.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/1/LizNelson_Rainfall_RAW_03_01_-_seg_1.wav" type="audio/wav">
+                      <audio controls aria-label="GT Source B">
+                        <source src="static/audio/duet/1/LizNelson_Rainfall_RAW_01_01_-_seg_1.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
 
-                  <!-- TF-GridNet -->
+                  <!-- MedleyVox -->
                   <div class="col">
                     <h4>MedleyVox</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/1/LizNelson_Rainfall_RAW_01_01_-_seg_1_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="MedleyVox Estimate A">
+                        <source src="static/audio/duet/1/LizNelson_Rainfall_RAW_03_01_-_seg_1_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/1/LizNelson_Rainfall_RAW_03_01_-_seg_1_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="MedleyVox Estimate B">
+                        <source src="static/audio/duet/1/LizNelson_Rainfall_RAW_01_01_-_seg_1_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
+
+                  <!-- TIGER -->
                   <div class="col">
                     <h4>TIGER</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/1/tiger/s0_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="TIGER Estimate A">
+                        <source src="static/audio/duet/1/tiger/s1_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/1/tiger/s1_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="TIGER Estimate B">
+                        <source src="static/audio/duet/1/tiger/s0_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
-                  <!-- TIGER (Proposed) -->
+
+                  <!-- Proposed -->
                   <div class="col">
                     <h4>Proposed</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/1/proposed/s0_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="Proposed Estimate A">
+                        <source src="static/audio/duet/1/proposed/s1_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/1/proposed/s1_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="Proposed Estimate B">
+                        <source src="static/audio/duet/1/proposed/s0_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
                 </div>
-                <!-- sample1 끝 -->
-                <!-- sample1 시작 -->
-                <h3 class="section-title"> 🎵 MedleyVox Duet Sample2</h3>
+
+                <!-- Duet Sample 2 -->
+                <h3 class="section-title">🎵 MedleyVox Duet — Sample 2</h3>
                 <h4>Mixture</h4>
                 <div class="mixture">
-                  <audio controls>
-                    <source src="static/audio/duet/2/NightPanther_Fire_-_seg_27.wav" type="audio/wav">
+                  <audio controls aria-label="Duet Sample 2 Mixture">
+                    <source src="static/audio/duet/2/NightPanther_Fire_-_seg_27.wav" type="audio/wav" />
                   </audio>
                 </div>
-                <div class="cols_4">
-                  <!-- Ground Truth -->
+
+                <div class="cols-4">
                   <div class="col">
                     <h4>Ground Truth</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/2/NightPanther_Fire_RAW_02_03_-_seg_27.wav" type="audio/wav">
+                      <audio controls aria-label="GT Source A">
+                        <source src="static/audio/duet/2/NightPanther_Fire_RAW_02_03_-_seg_27.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/2/NightPanther_Fire_RAW_07_02_-_seg_27.wav" type="audio/wav">
+                      <audio controls aria-label="GT Source B">
+                        <source src="static/audio/duet/2/NightPanther_Fire_RAW_07_02_-_seg_27.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
 
-                  <!-- TF-GridNet -->
                   <div class="col">
                     <h4>MedleyVox</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/2/NightPanther_Fire_RAW_02_03_-_seg_27_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="MedleyVox Estimate A">
+                        <source src="static/audio/duet/2/NightPanther_Fire_RAW_02_03_-_seg_27_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/2/NightPanther_Fire_RAW_07_02_-_seg_27_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="MedleyVox Estimate B">
+                        <source src="static/audio/duet/2/NightPanther_Fire_RAW_07_02_-_seg_27_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                  </div>
-                  <!-- TF-GridNet -->
-                  <div class="col">
-                    <h4>TIGER</h4>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/2/tiger/s0_estimate.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/2/tiger/s1_estimate.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                  </div>
-                  <!-- TIGER (Proposed) -->
-                  <div class="col">
-                    <h4>Proposed</h4>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/2/proposed/s0_estimate.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/2/proposed/s1_estimate.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                  </div>
-                </div>
-                <!-- sample1 끝 -->
-                <!-- sample1 시작 -->
-                <h3 class="section-title"> 🎵 MedleyVox Duet Sample3</h3>
-                <h4>Mixture</h4>
-                <div class="mixture">
-                  <audio controls>
-                    <source src="static/audio/duet/3/Meaxic_TakeAStep_-_seg_21.wav" type="audio/wav">
-                  </audio>
-                </div>
-                <div class="cols_4">
-                  <!-- Ground Truth -->
-                  <div class="col">
-                    <h4>Ground Truth</h4>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/3/Meaxic_TakeAStep_RAW_04_01_-_seg_21.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/3/Meaxic_TakeAStep_RAW_07_01_-_seg_21.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                  </div>
-
-                  <!-- TF-GridNet -->
-                  <div class="col">
-                    <h4>MedleyVox</h4>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/3/Meaxic_TakeAStep_RAW_04_01_-_seg_21.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/3/Meaxic_TakeAStep_RAW_07_01_-_seg_21_estimate.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                  </div>
-                   <div class="col">
-                    <h4>TIGER</h4>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/3/tiger/s0_estimate.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/3/tiger/s1_estimate.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                  </div>
-                  <!-- TIGER (Proposed) -->
-                  <div class="col">
-                    <h4>Proposed</h4>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/3/proposed/s0_estimate.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/3/proposed/s1_estimate.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                  </div>
-                </div>
-                <!-- sample1 끝 -->
-
-
-                <!-- sample1 시작 -->
-                <h3 class="section-title"> 🎵 MedleyVox Duet Sample4</h3>
-                <h4>Mixture</h4>
-                <div class="mixture">
-                  <audio controls>
-                    <source src="static/audio/duet/4/LizNelson_ImComingHome_-_seg_10 (1).wav" type="audio/wav">
-                  </audio>
-                </div>
-                <div class="cols_4">
-                  <!-- Ground Truth -->
-                  <div class="col">
-                    <h4>Ground Truth</h4>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/4/LizNelson_ImComingHome_RAW_01_01_-_seg_10.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/4/LizNelson_ImComingHome_RAW_04_01_-_seg_10.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                  </div>
-
-                  <!-- TF-GridNet -->
-                  <div class="col">
-                    <h4>MedleyVox</h4>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/4/LizNelson_ImComingHome_RAW_01_01_-_seg_10_estimate.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/4/LizNelson_ImComingHome_RAW_04_01_-_seg_10_estimate.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                  </div>
-                   <div class="col">
-                    <h4>TIGER</h4>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/4/tiger/s1_estimate.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/4/tiger/s0_estimate.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                  </div>
-                  <!-- TIGER (Proposed) -->
-                  <div class="col">
-                    <h4>Proposed</h4>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/4/proposed/s0_estimate.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/duet/4/proposed/s1_estimate.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                  </div>
-                </div>
-                <!-- sample1 끝 -->
-              </div>
-            </div>
-        </div>
-        
-          <h2 class="title is-3">Medleyvox Unison Samples</h2>
-          <div class="sample-section">
-            <div class="content has-text-centered">
-              <div class="demo-wrap">
-                <!-- sample1 시작 -->
-                <h3 class="section-title"> 🎵 MedleyVox Unison Sample1</h3>
-                <h4>Mixture</h4>
-                <div class="mixture">
-                  <audio controls>
-                    <source src="static/audio/unison/1/CassandraJenkins_PerfectDay_-_seg_11.wav" type="audio/wav">
-                  </audio>
-                </div>
-                <div class="cols_4">
-                  <!-- Ground Truth -->
-                  <div class="col">
-                    <h4>Ground Truth</h4>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/1/gt1.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/1/gt2.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                  </div>
-
-                  <!-- TF-GridNet -->
-                  <div class="col">
-                    <h4>MedleyVox</h4>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/1/medley1.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
-                    </div>
-                    <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/1/medley2.wav" type="audio/wav">
-                      </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
 
                   <div class="col">
                     <h4>TIGER</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/1/tiger/spk1.wav" type="audio/wav">
+                      <audio controls aria-label="TIGER Estimate A">
+                        <source src="static/audio/duet/2/tiger/s0_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/1/tiger/spk2.wav" type="audio/wav">
+                      <audio controls aria-label="TIGER Estimate B">
+                        <source src="static/audio/duet/2/tiger/s1_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
 
-                  <!-- TIGER (Proposed) -->
                   <div class="col">
                     <h4>Proposed</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/1/prposed/s1_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="Proposed Estimate A">
+                        <source src="static/audio/duet/2/proposed/s0_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/1/prposed/s0_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="Proposed Estimate B">
+                        <source src="static/audio/duet/2/proposed/s1_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
                 </div>
-                <!-- sample1 끝 -->
-                <!-- sample1 시작 -->
-                <h3 class="section-title"> 🎵 MedleyVox Unison Sample2</h3>
+
+                <!-- Duet Sample 3 -->
+                <h3 class="section-title">🎵 MedleyVox Duet — Sample 3</h3>
                 <h4>Mixture</h4>
                 <div class="mixture">
-                  <audio controls>
-                    <source src="static/audio/unison/2/TheTonTons_Lush_-_seg_10.wav" type="audio/wav">
+                  <audio controls aria-label="Duet Sample 3 Mixture">
+                    <source src="static/audio/duet/3/Meaxic_TakeAStep_-_seg_21.wav" type="audio/wav" />
                   </audio>
                 </div>
-                <div class="cols_4">
-                  <!-- Ground Truth -->
+
+                <div class="cols-4">
                   <div class="col">
                     <h4>Ground Truth</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/2/TheTonTons_Lush_RAW_10_01_-_seg_10.wav" type="audio/wav">
+                      <audio controls aria-label="GT Source A">
+                        <source src="static/audio/duet/3/Meaxic_TakeAStep_RAW_07_01_-_seg_21.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/2/TheTonTons_Lush_RAW_10_02_-_seg_10.wav" type="audio/wav">
+                      <audio controls aria-label="GT Source B">
+                        <source src="static/audio/duet/3/Meaxic_TakeAStep_RAW_04_01_-_seg_21.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
 
-                  <!-- TF-GridNet -->
                   <div class="col">
                     <h4>MedleyVox</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/2/TheTonTons_Lush_RAW_10_02_-_seg_10_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="MedleyVox Estimate A">
+                        <source src="static/audio/duet/3/Meaxic_TakeAStep_RAW_07_01_-_seg_21_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/2/TheTonTons_Lush_RAW_10_01_-_seg_10_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="MedleyVox Estimate B">
+                        <source src="static/audio/duet/3/Meaxic_TakeAStep_RAW_04_01_-_seg_21_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
-                  <!-- TF-GridNet -->
+
                   <div class="col">
                     <h4>TIGER</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/2/tiger/s1_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="TIGER Estimate A">
+                        <source src="static/audio/duet/3/tiger/s1_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/2/tiger/s0_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="TIGER Estimate B">
+                        <source src="static/audio/duet/3/tiger/s0_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
-                  <!-- TIGER (Proposed) -->
+
                   <div class="col">
                     <h4>Proposed</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/2/proposed/s1_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="Proposed Estimate A">
+                        <source src="static/audio/duet/3/proposed/s1_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/2/proposed/s0_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="Proposed Estimate B">
+                        <source src="static/audio/duet/3/proposed/s0_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
                 </div>
-                <!-- sample1 끝 -->
-                <!-- sample1 시작 -->
-                <h3 class="section-title"> 🎵 MedleyVox Unison Sample3</h3>
+
+                <!-- Duet Sample 4 -->
+                <h3 class="section-title">🎵 MedleyVox Duet — Sample 4</h3>
                 <h4>Mixture</h4>
                 <div class="mixture">
-                  <audio controls>
-                    <source src="static/audio/unison/3/PeterMatthewBauer_YouAlwaysLookForSomeoneLost_-_seg_8.wav" type="audio/wav">
+                  <audio controls aria-label="Duet Sample 4 Mixture">
+                    <source src="static/audio/duet/4/LizNelson_ImComingHome_-_seg_10.wav" type="audio/wav" />
                   </audio>
                 </div>
-                <div class="cols_4">
-                  <!-- Ground Truth -->
+
+                <div class="cols-4">
                   <div class="col">
                     <h4>Ground Truth</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/3/PeterMatthewBauer_YouAlwaysLookForSomeoneLost_RAW_05_01_-_seg_8.wav" type="audio/wav">
+                      <audio controls aria-label="GT Source A">
+                        <source src="static/audio/duet/4/LizNelson_ImComingHome_RAW_01_01_-_seg_10.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/3/PeterMatthewBauer_YouAlwaysLookForSomeoneLost_RAW_05_03_-_seg_8.wav" type="audio/wav">
+                      <audio controls aria-label="GT Source B">
+                        <source src="static/audio/duet/4/LizNelson_ImComingHome_RAW_04_01_-_seg_10.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
 
-                  <!-- TF-GridNet -->
                   <div class="col">
                     <h4>MedleyVox</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/3/PeterMatthewBauer_YouAlwaysLookForSomeoneLost_RAW_05_01_-_seg_8_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="MedleyVox Estimate A">
+                        <source src="static/audio/duet/4/LizNelson_ImComingHome_RAW_01_01_-_seg_10_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/3/PeterMatthewBauer_YouAlwaysLookForSomeoneLost_RAW_05_03_-_seg_8_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="MedleyVox Estimate B">
+                        <source src="static/audio/duet/4/LizNelson_ImComingHome_RAW_04_01_-_seg_10_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
-                  <!-- TF-GridNet -->
+
                   <div class="col">
                     <h4>TIGER</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/3/tiger/spk1.wav" type="audio/wav">
+                      <audio controls aria-label="TIGER Estimate A">
+                        <source src="static/audio/duet/4/tiger/s1_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/3/tiger/spk2.wav" type="audio/wav">
+                      <audio controls aria-label="TIGER Estimate B">
+                        <source src="static/audio/duet/4/tiger/s0_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
-                  <!-- TIGER (Proposed) -->
+
                   <div class="col">
                     <h4>Proposed</h4>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/3/proposed/s1_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="Proposed Estimate A">
+                        <source src="static/audio/duet/4/proposed/s1_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                     <div class="card">
-                      <audio controls>
-                        <source src="static/audio/unison/3/proposed/s0_estimate.wav" type="audio/wav">
+                      <audio controls aria-label="Proposed Estimate B">
+                        <source src="static/audio/duet/4/proposed/s0_estimate.wav" type="audio/wav" />
                       </audio>
-                      <!-- <img src="static/img/unison/1/proposed2.png" alt="TIGER est2 spectrogram">-->
                     </div>
                   </div>
                 </div>
-                <!-- sample1 끝 -->
+
               </div>
             </div>
           </div>
-        
+
+          <!-- UNISON SAMPLES -->
+          <h2 class="title is-3">MedleyVox Unison Samples</h2>
+          <div class="sample-section">
+            <div class="content has-text-centered">
+              <div class="demo-wrap">
+
+                <!-- Unison Sample 2 -->
+                <h3 class="section-title">🎵 MedleyVox Unison — Sample 1</h3>
+                <h4>Mixture</h4>
+                <div class="mixture">
+                  <audio controls aria-label="Unison Sample 2 Mixture">
+                    <source src="static/audio/unison/2/TheTonTons_Lush_-_seg_10.wav" type="audio/wav" />
+                  </audio>
+                </div>
+
+                <div class="cols-4">
+                  <div class="col">
+                    <h4>Ground Truth</h4>
+                    <div class="card">
+                      <audio controls aria-label="GT Source A">
+                        <source src="static/audio/unison/2/TheTonTons_Lush_RAW_10_01_-_seg_10.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="card">
+                      <audio controls aria-label="GT Source B">
+                        <source src="static/audio/unison/2/TheTonTons_Lush_RAW_10_02_-_seg_10.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <h4>MedleyVox</h4>
+                    <div class="card">
+                      <audio controls aria-label="MedleyVox Estimate A">
+                        <source src="static/audio/unison/2/TheTonTons_Lush_RAW_10_01_-_seg_10_estimate.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="card">
+                      <audio controls aria-label="MedleyVox Estimate B">
+                        <source src="static/audio/unison/2/TheTonTons_Lush_RAW_10_02_-_seg_10_estimate.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <h4>TIGER</h4>
+                    <div class="card">
+                      <audio controls aria-label="TIGER Estimate A">
+                        <source src="static/audio/unison/2/tiger/s0_estimate.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="card">
+                      <audio controls aria-label="TIGER Estimate B">
+                        <source src="static/audio/unison/2/tiger/s1_estimate.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <h4>Proposed</h4>
+                    <div class="card">
+                      <audio controls aria-label="Proposed Estimate A">
+                        <source src="static/audio/unison/2/proposed/s0_estimate.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="card">
+                      <audio controls aria-label="Proposed Estimate B">
+                        <source src="static/audio/unison/2/proposed/s1_estimate.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                  </div>
+                </div>
+                <!-- Unison Sample 3 -->
+                <h3 class="section-title">🎵 MedleyVox Unison — Sample 2</h3>
+                <h4>Mixture</h4>
+                <div class="mixture">
+                  <audio controls aria-label="Unison Sample 3 Mixture">
+                    <source src="static/audio/unison/3/PeterMatthewBauer_YouAlwaysLookForSomeoneLost_-_seg_8.wav" type="audio/wav" />
+                  </audio>
+                </div>
+
+                <div class="cols-4">
+                  <div class="col">
+                    <h4>Ground Truth</h4>
+                    <div class="card">
+                      <audio controls aria-label="GT Source A">
+                        <source src="static/audio/unison/3/PeterMatthewBauer_YouAlwaysLookForSomeoneLost_RAW_05_01_-_seg_8.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="card">
+                      <audio controls aria-label="GT Source B">
+                        <source src="static/audio/unison/3/PeterMatthewBauer_YouAlwaysLookForSomeoneLost_RAW_05_03_-_seg_8.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <h4>MedleyVox</h4>
+                    <div class="card">
+                      <audio controls aria-label="MedleyVox Estimate A">
+                        <source src="static/audio/unison/3/PeterMatthewBauer_YouAlwaysLookForSomeoneLost_RAW_05_01_-_seg_8_estimate.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="card">
+                      <audio controls aria-label="MedleyVox Estimate B">
+                        <source src="static/audio/unison/3/PeterMatthewBauer_YouAlwaysLookForSomeoneLost_RAW_05_03_-_seg_8_estimate.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <h4>TIGER</h4>
+                    <div class="card">
+                      <audio controls aria-label="TIGER Estimate A">
+                        <source src="static/audio/unison/3/tiger/spk1.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="card">
+                      <audio controls aria-label="TIGER Estimate B">
+                        <source src="static/audio/unison/3/tiger/spk2.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <h4>Proposed</h4>
+                    <div class="card">
+                      <audio controls aria-label="Proposed Estimate A">
+                        <source src="static/audio/unison/3/proposed/s1_estimate.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="card">
+                      <audio controls aria-label="Proposed Estimate B">
+                        <source src="static/audio/unison/3/proposed/s0_estimate.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                  </div>
+                </div>
+                                <!-- Unison Sample 1 -->
+                <h3 class="section-title">🎵 MedleyVox Unison — Sample 3</h3>
+                <h4>Mixture</h4>
+                <div class="mixture">
+                  <audio controls aria-label="Unison Sample 1 Mixture">
+                    <source src="static/audio/unison/1/CassandraJenkins_PerfectDay_-_seg_11.wav" type="audio/wav" />
+                  </audio>
+                </div>
+
+                <div class="cols-4">
+                  <div class="col">
+                    <h4>Ground Truth</h4>
+                    <div class="card">
+                      <audio controls aria-label="GT Source A">
+                        <source src="static/audio/unison/1/gt1.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="card">
+                      <audio controls aria-label="GT Source B">
+                        <source src="static/audio/unison/1/gt2.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <h4>MedleyVox</h4>
+                    <div class="card">
+                      <audio controls aria-label="MedleyVox Estimate A">
+                        <source src="static/audio/unison/1/medley1.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="card">
+                      <audio controls aria-label="MedleyVox Estimate B">
+                        <source src="static/audio/unison/1/medley2.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <h4>TIGER</h4>
+                    <div class="card">
+                      <audio controls aria-label="TIGER Estimate A">
+                        <source src="static/audio/unison/1/tiger/spk1.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="card">
+                      <audio controls aria-label="TIGER Estimate B">
+                        <source src="static/audio/unison/1/tiger/spk2.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <h4>Proposed</h4>
+                    <div class="card">
+                      <audio controls aria-label="Proposed Estimate A">
+                        <source src="static/audio/unison/1/proposed/s1_estimate.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="card">
+                      <audio controls aria-label="Proposed Estimate B">
+                        <source src="static/audio/unison/1/proposed/s0_estimate.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                  </div>
+                </div>
+  
+                
+
+              </div>
+            </div>
+          </div>
+
+          <!-- ADDITIONAL POP SAMPLES -->
           <h2 class="title is-3">Additional Pop Samples</h2>
           <div class="sample-section">
             <div class="content has-text-centered">
               <div class="demo-wrap">
-<!-- sample1 시작 -->
-                <div class="row" style="display: flex; gap: 20px;">
-  <!-- 곡 1 -->
-  <div class="song" style="flex: 1;">
-    <h4 class="section-title"> 🎵 Jason Mraz, Colbie Caillat - Lucky</h4>
-    <h5>Mixture</h5>
-    <div class="mixture">
-      <audio controls>
-        <source src="static/audio/pop/1/jason_mraz-lucky_result_vocals_1 (1).wav" type="audio/wav">
-      </audio>
-    </div>
-    <div class="cols">
-      <div class="col">
-        <h5>Proposed</h5>
-        <div class="mixture">
-          <audio controls>
-            <source src="static/audio/pop/1/propsed/spk1.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="mixture">
-          <audio controls>
-            <source src="static/audio/pop/1/propsed/spk2.wav" type="audio/wav">
-          </audio>
-        </div>
-      </div>
-    </div>
-  </div>
+                <div class="cols" style="margin-bottom: 20px;">
+                  <!-- Song 1 -->
+                  <div class="col">
+                    <h4 class="section-title">🎵 Jason Mraz, Colbie Caillat — Lucky</h4>
+                    <h5>Mixture</h5>
+                    <div class="mixture">
+                      <audio controls aria-label="Lucky Mixture">
+                        <source src="static/audio/pop/1/jason_mraz-lucky_result_vocals_1 (1).wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="cols">
+                      <div class="col">
+                        <h5>Proposed</h5>
+                        <div class="mixture">
+                          <audio controls aria-label="Lucky Proposed Source 1">
+                            <source src="static/audio/pop/1/proposed/spk1.wav" type="audio/wav" />
+                          </audio>
+                        </div>
+                        <div class="mixture">
+                          <audio controls aria-label="Lucky Proposed Source 2">
+                            <source src="static/audio/pop/1/proposed/spk2.wav" type="audio/wav" />
+                          </audio>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-  <!-- 곡 2 -->
-  <div class="song" style="flex: 1;">
-    <h4 class="section-title"> 🎵 Kendrick Lamar, Sza - Luther </h4>
-    <h5>Mixture</h5>
-    <div class="mixture">
-      <audio controls>
-        <source src="static/audio/pop/luther/mixture.wav" type="audio/wav">
-      </audio>
-    </div>
-    <div class="cols">
-      <div class="col">
-        <h5>Proposed</h5>
-        <div class="mixture">
-          <audio controls>
-            <source src="static/audio/pop/luther/spk2.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="mixture">
-          <audio controls>
-            <source src="static/audio/pop/luther/spk1.wav" type="audio/wav">
-          </audio>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- sample1 시작 -->                
-  <!-- sample1 시작 -->
-<div class="row" style="display: flex; gap: 20px;">
-  <!-- 곡 1 -->
-  <div class="song" style="flex: 1;">
-    <h4 class="section-title"> 🎵 ROSÉ, Bruno Mars - APT.</h4>
-    <h5>Mixture</h5>
-    <div class="mixture">
-      <audio controls>
-        <source src="static/audio/pop/apt/mixture.wav" type="audio/wav">
-      </audio>
-    </div>
-    <div class="cols">
-      <div class="col">
-        <h5>Proposed</h5>
-        <div class="mixture">
-          <audio controls>
-            <source src="static/audio/pop/apt/spk1.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="mixture">
-          <audio controls>
-            <source src="static/audio/pop/apt/spk2.wav" type="audio/wav">
-          </audio>
-        </div>
-      </div>
-    </div>
-  </div>
+                  <!-- Song 2 -->
+                  <div class="col">
+                    <h4 class="section-title">🎵 Kendrick Lamar, SZA — LUTHER</h4>
+                    <h5>Mixture</h5>
+                    <div class="mixture">
+                      <audio controls aria-label="LUTHER Mixture">
+                        <source src="static/audio/pop/luther/mixture.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="cols">
+                      <div class="col">
+                        <h5>Proposed</h5>
+                        <div class="mixture">
+                          <audio controls aria-label="LUTHER Proposed Source 1">
+                            <source src="static/audio/pop/luther/spk1.wav" type="audio/wav" />
+                          </audio>
+                        </div>
+                        <div class="mixture">
+                          <audio controls aria-label="LUTHER Proposed Source 2">
+                            <source src="static/audio/pop/luther/spk2.wav" type="audio/wav" />
+                          </audio>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-  <!-- 곡 2 -->
-  <div class="song" style="flex: 1;">
-    <h4 class="section-title"> 🎵 Rumi, Jinu(KPop Demon Hunters) - Free </h4>
-    <h5>Mixture</h5>
-    <div class="mixture">
-      <audio controls>
-        <source src="static/audio/pop/free/mixture.wav" type="audio/wav">
-      </audio>
-    </div>
-    <div class="cols">
-      <div class="col">
-        <h5>Proposed</h5>
-        <div class="mixture">
-          <audio controls>
-            <source src="static/audio/pop/free/spk1.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="mixture">
-          <audio controls>
-            <source src="static/audio/pop/free/spk2.wav" type="audio/wav">
-          </audio>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>              
+                <div class="cols">
+                  <!-- Song 3 -->
+                  <div class="col">
+                    <h4 class="section-title">🎵 ROSÉ, Bruno Mars — APT.</h4>
+                    <h5>Mixture</h5>
+                    <div class="mixture">
+                      <audio controls aria-label="APT Mixture">
+                        <source src="static/audio/pop/apt/mixture.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="cols">
+                      <div class="col">
+                        <h5>Proposed</h5>
+                        <div class="mixture">
+                          <audio controls aria-label="APT Proposed Source 1">
+                            <source src="static/audio/pop/apt/spk1.wav" type="audio/wav" />
+                          </audio>
+                        </div>
+                        <div class="mixture">
+                          <audio controls aria-label="APT Proposed Source 2">
+                            <source src="static/audio/pop/apt/spk2.wav" type="audio/wav" />
+                          </audio>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
+                  <!-- Song 4 -->
+                  <div class="col">
+                    <h4 class="section-title">🎵 Rumi, Jinu (K-Pop Demon Hunters) — Free</h4>
+                    <h5>Mixture</h5>
+                    <div class="mixture">
+                      <audio controls aria-label="Free Mixture">
+                        <source src="static/audio/pop/free/mixture.wav" type="audio/wav" />
+                      </audio>
+                    </div>
+                    <div class="cols">
+                      <div class="col">
+                        <h5>Proposed</h5>
+                        <div class="mixture">
+                          <audio controls aria-label="Free Proposed Source 1">
+                            <source src="static/audio/pop/free/spk1.wav" type="audio/wav" />
+                          </audio>
+                        </div>
+                        <div class="mixture">
+                          <audio controls aria-label="Free Proposed Source 2">
+                            <source src="static/audio/pop/free/spk2.wav" type="audio/wav" />
+                          </audio>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-                
               </div>
             </div>
-        </div>
+          </div>
 
-
-    <!-- Concurrent Work.
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
         </div>
       </div>
     </div>
-    / Concurrent Work. -->
- 
-  </div>
-</section>
+  </section>
 
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="./static/videos/nerfies_paper.pdf" aria-label="PDF">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/keunhong" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              You are welcome to borrow the
+              <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website; please link back to this page in the footer. Remember to remove any analytics code you do not want on your site.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-</footer>
-
-
+  </footer>
 </body>
 </html>
